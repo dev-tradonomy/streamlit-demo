@@ -4,7 +4,7 @@ import aiohttp
 
 
 async def fetch_response(prompt):
-    api_url = "https://api.example.com/chat"  # Replace with your actual API endpoint
+    api_url = "http://lb-1401664878.ap-south-1.elb.amazonaws.com/gupshup/"
     payload = {"prompt": prompt}
     headers = {"Authorization": "Bearer YOUR_API_KEY"}
 
@@ -13,7 +13,7 @@ async def fetch_response(prompt):
             async with session.post(api_url, json=payload, headers=headers) as response:
                 if response.status == 200:
                     result = await response.json()
-                    return result.get("response", "No response received.")
+                    return result.get("result", "No response received.")
                 else:
                     return f"Error: {response.status} - {await response.text()}"
     except Exception as e:
