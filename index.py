@@ -4,7 +4,7 @@ import aiohttp
 
 
 async def fetch_response(prompt):
-    api_url = "http://lb-1401664878.ap-south-1.elb.amazonaws.com/gupshup/"
+    api_url = "http://lb-1401664878.ap-south-1.elb.amazonaws.com/tradonomy/"
     payload = {"prompt": prompt}
     headers = {"Authorization": "Bearer YOUR_API_KEY"}
 
